@@ -42,9 +42,9 @@ last_date = datetime.datetime.now()
 @app.route("/")
 def get_latest_news():
     global latest_news
-    if (datetime.datetime.now() - last_date).seconds > 3600:
+    if (datetime.datetime.now() - last_date).seconds > 1800:
         latest_news = parse_news()
     return render_template("index.html", latest_news=latest_news)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8000)
+    app.run(host='0.0.0.0', port=5000)
